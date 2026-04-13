@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { FaCodeBranch, FaLaptopCode, FaRocket } from "react-icons/fa";
 
 const MotionBox = motion(Box);
-
+/** This is about */
 export const AboutSection = () => {
   return (
     <Box id="about" py={20} bg="transparent">
