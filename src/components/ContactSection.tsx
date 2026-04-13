@@ -15,21 +15,42 @@ export const ContactSection = () => {
   const toast = useToast();
 
   const onSubmit = async (data: FormData) => {
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    console.log(data);
-    toast({
-      title: "Message sent.",
-      description: "Thanks for reaching out! I'll get back to you soon.",
-      status: "success",
-      duration: 5000,
-      isClosable: true,
-    });
-    reset();
+    try {
+      await fetch("https://formsubmit.co/ajax/narendrajagadhane@gmail.com", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify({
+            name: data.name,
+            email: data.email,
+            message: data.message,
+            _subject: "New Portfolio Inquiry from " + data.name 
+        })
+      });
+
+      toast({
+        title: "Message sent.",
+        description: "Thanks for reaching out! I'll get back to you soon.",
+        status: "success",
+        duration: 5000,
+        isClosable: true,
+      });
+      reset();
+    } catch (error) {
+      toast({
+        title: "Sending failed.",
+        description: "There was an issue sending your message. Please try again later.",
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+      });
+    }
   };
 
   return (
-    <Box id="contact" py={20} bg="gray.900">
+    <Box id="contact" py={20} bg="transparent">
       <Container maxW="3xl">
         <MotionBox
           initial={{ opacity: 0, y: 50 }}

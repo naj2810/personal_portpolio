@@ -6,7 +6,7 @@ const MotionBox = motion(Box);
 
 export const ExperienceSection = () => {
   return (
-    <Box id="experience" py={20} bg="gray.900" position="relative">
+    <Box id="experience" py={20} bg="transparent" position="relative">
       <Container maxW="5xl">
         <VStack spacing={4} textAlign="center" mb={16}>
           <Heading as="h2" size="2xl" color="white">

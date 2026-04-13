@@ -6,7 +6,7 @@ const MotionBox = motion(Box);
 
 export const AboutSection = () => {
   return (
-    <Box id="about" py={20} bg="gray.800">
+    <Box id="about" py={20} bg="transparent">
       <Container maxW="7xl">
         <MotionBox
           initial={{ opacity: 0, y: 50 }}

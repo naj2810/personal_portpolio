@@ -1,24 +1,25 @@
 import { Box, Heading, Text, Button, Flex, Image, VStack, HStack, Icon } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { FaLinkedin, FaEnvelope } from "react-icons/fa";
-import logo from "../assets/logo.png";
+import profilePic from "../assets/profile.jpg";
 
 const MotionBox = motion(Box);
 const MotionFlex = motion(Flex);
 
 export const HeroSection = () => {
   return (
-    <Box minH="100vh" display="flex" alignItems="center" bg="gray.900" 
-         position="relative" overflow="hidden">
-      {/* Decorative gradient blur in background */}
-      <Box position="absolute" top="-20%" left="-10%" w="500px" h="500px" 
-           bgGradient="radial(blue.500, transparent, transparent)" filter="blur(100px)" opacity={0.3} zIndex={0} />
-      <Box position="absolute" bottom="-20%" right="-10%" w="500px" h="500px" 
-           bgGradient="radial(purple.500, transparent, transparent)" filter="blur(100px)" opacity={0.3} zIndex={0} />
+    <Box minH="100vh" display="flex" alignItems="center" bg="transparent"
+      position="relative" overflow="hidden">
 
-      <Flex as="main" direction={["column-reverse", "column-reverse", "row"]} 
-            w="full" maxW="7xl" mx="auto" p={8} zIndex={1} alignItems="center" justify="space-between">
-        <MotionBox 
+      {/* Decorative gradient blur in background */}
+      <Box position="absolute" top="-20%" left="-10%" w="500px" h="500px"
+        bgGradient="radial(blue.500, transparent, transparent)" filter="blur(100px)" opacity={0.2} zIndex={0} />
+      <Box position="absolute" bottom="-20%" right="-10%" w="500px" h="500px"
+        bgGradient="radial(purple.500, transparent, transparent)" filter="blur(100px)" opacity={0.2} zIndex={0} />
+
+      <Flex as="main" direction={["column-reverse", "column-reverse", "row"]}
+        w="full" maxW="7xl" mx="auto" p={8} zIndex={1} alignItems="center" justify="space-between">
+        <MotionBox
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
@@ -44,7 +45,7 @@ export const HeroSection = () => {
             <HStack spacing={4} pt={2} flexWrap="wrap" justify={["center", "center", "flex-start"]}>
               <Button colorScheme="brand" size="lg" rounded="full" px={8}
                 _hover={{ transform: 'translateY(-2px)', shadow: 'xl' }}
-                onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth'})}
+                onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 View Projects
               </Button>
@@ -55,7 +56,7 @@ export const HeroSection = () => {
               </Button>
               <Button variant="outline" colorScheme="gray" size="lg" rounded="full" px={8} color="white"
                 _hover={{ transform: 'translateY(-2px)', bg: 'whiteAlpha.200' }}
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth'})}
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Contact Me
               </Button>
@@ -82,15 +83,15 @@ export const HeroSection = () => {
           mb={[10, 10, 0]}
         >
           <Box rounded="full" bgGradient="linear(to-br, brand.500, purple.500)" p="4px">
-             <Image 
-               src={logo} 
-               alt="Narendra Jagadhane Logo" 
-               rounded="full" 
-               boxSize={["250px", "300px", "400px"]} 
-               objectFit="cover"
-               bg="gray.900"
-               p={2}
-             />
+            <Image
+              src={profilePic}
+              alt="Narendra Jagadhane Profile"
+              rounded="full"
+              boxSize={["250px", "300px", "400px"]}
+              objectFit="cover"
+              bg="gray.900"
+              p={2}
+            />
           </Box>
         </MotionFlex>
       </Flex>

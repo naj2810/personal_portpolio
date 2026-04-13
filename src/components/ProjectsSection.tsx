@@ -38,7 +38,7 @@ export const ProjectsSection = () => {
   ];
 
   return (
-    <Box id="projects" py={20} bg="gray.800">
+    <Box id="projects" py={20} bg="transparent">
       <Container maxW="7xl">
         <MotionBox
           initial={{ opacity: 0, y: 50 }}
@@ -57,13 +57,13 @@ export const ProjectsSection = () => {
 
           <SimpleGrid columns={[1, 1, 2]} spacing={10}>
             {featuredProjects.map((project, idx) => (
-              <Flex 
+              <Flex
                 key={idx}
                 direction="column"
-                bg="gray.900" 
-                rounded="2xl" 
-                border="1px solid" 
-                borderColor="gray.700" 
+                bg="gray.900"
+                rounded="2xl"
+                border="1px solid"
+                borderColor="gray.700"
                 p={8}
                 _hover={{ transform: "translateY(-5px)", shadow: "2xl", borderColor: project.color }}
                 transition="all 0.3s ease"
@@ -73,11 +73,11 @@ export const ProjectsSection = () => {
                     <Icon as={project.icon} boxSize={8} />
                   </Box>
                   <Box>
-                     <Heading size="lg" color="white">{project.title}</Heading>
-                     <Text color={project.color} fontWeight="bold" mt={1}>{project.subtitle}</Text>
+                    <Heading size="lg" color="white">{project.title}</Heading>
+                    <Text color={project.color} fontWeight="bold" mt={1}>{project.subtitle}</Text>
                   </Box>
                 </Flex>
-                
+
                 <Text color="gray.400" fontSize="md" mb={6} lineHeight="tall">
                   {project.description}
                 </Text>

@@ -27,7 +27,7 @@ export const SkillsSection = () => {
   ];
 
   return (
-    <Box id="skills" py={20} bg="gray.900">
+    <Box id="skills" py={20} bg="transparent">
       <Container maxW="5xl">
         <MotionBox
           initial={{ opacity: 0, y: 50 }}
